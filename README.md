@@ -43,6 +43,11 @@ before executing it.
 
 Recall previous command from history and to adjust the prompt.
 
+## Related
+
+- [walk](https://github.com/antonmedv/walk) – terminal file manager
+- [fx](https://github.com/antonmedv/fx) – terminal JSON viewer
+
 ## License
 
 [MIT](LICENSE)
