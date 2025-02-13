@@ -8,6 +8,8 @@
 
 **Howto** is a terminal helper which queries OpenAI API and inserts the result into the current terminal input.
 
+Simply press <kbd>ctrl</kbd>+<kbd>g</kbd> to call **howto**. **Howto** replaces your command with a correct command from LLM.
+
 ## Install
 
 ```
@@ -37,7 +39,7 @@ bindkey -s "\C-g" "\C-ahowto \C-j"
 
 ## Usage
 
-Write a command in terminal and press `ctrl+g` to send current command to OpenAI API.
+Write a command in terminal and press <kbd>ctrl</kbd>+<kbd>g</kbd> to send current command to OpenAI API.
 LLM response will be inserted into the current input. You can **modify** the returned command,
 before executing it.
 
