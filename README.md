@@ -45,6 +45,16 @@ before executing it.
 
 Recall previous command from history and to adjust the prompt.
 
+## Examples
+
+Use **howto** to list all container's hostnames:
+
+<img src=".github/images/example-docker.gif" width="600" alt="howto example">
+
+Use **howto** to convert a movie to mp4:
+
+<img src=".github/images/example-ffmpeg.gif" width="600" alt="howto example">
+
 ## Related
 
 - [walk](https://github.com/antonmedv/walk) – terminal file manager
