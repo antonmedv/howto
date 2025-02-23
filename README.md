@@ -59,6 +59,8 @@ Use **howto** to convert a movie to mp4:
 
 - [walk](https://github.com/antonmedv/walk) – terminal file manager
 - [fx](https://github.com/antonmedv/fx) – terminal JSON viewer
+- [countdown](https://github.com/antonmedv/countdown) – terminal countdown timer
+
 
 ## License
 
