@@ -24,7 +24,12 @@ func main() {
 		openAiModel = model
 	}
 
-	response, err := queryOpenAI(openAIKey, openAiModel, prompt(cmd), 1000)
+	openAIUrl, ok := os.LookupEnv("OPENAI_API_URL")
+	if !ok {
+		openAIUrl = "https://api.openai.com/v1/chat/completions"
+	}
+
+	response, err := queryOpenAI(openAIUrl, openAIKey, openAiModel, prompt(cmd), 1000)
 	if err != nil {
 		panic(err)
 	}
