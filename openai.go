@@ -8,8 +8,6 @@ import (
 	"net/http"
 )
 
-const openAIEndpoint = "https://api.openai.com/v1/chat/completions"
-
 type OpenAIRequest struct {
 	Model     string    `json:"model"`
 	Messages  []Message `json:"messages"`
@@ -27,7 +25,7 @@ type OpenAIResponse struct {
 	} `json:"choices"`
 }
 
-func queryOpenAI(apiKey, model, prompt string, maxTokens int) (string, error) {
+func queryOpenAI(apiUrl, apiKey, model, prompt string, maxTokens int) (string, error) {
 	requestBody := OpenAIRequest{
 		Model:     model,
 		Messages:  []Message{{Role: "user", Content: prompt}},
@@ -39,7 +37,7 @@ func queryOpenAI(apiKey, model, prompt string, maxTokens int) (string, error) {
 		return "", err
 	}
 
-	req, err := http.NewRequest("POST", openAIEndpoint, bytes.NewBuffer(jsonData))
+	req, err := http.NewRequest("POST", apiUrl, bytes.NewBuffer(jsonData))
 	if err != nil {
 		return "", err
 	}
