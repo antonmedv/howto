@@ -6,7 +6,9 @@
   <br>
 </p>
 
-**Howto** is a terminal helper which queries OpenAI API and inserts the result into the current terminal input.
+**Howto** is a terminal helper which queries LLM and inserts the result into the current terminal input.
+
+Supports **OpenAI**, **DeepSeek**, and **Gemini**.
 
 Simply press <kbd>ctrl</kbd>+<kbd>g</kbd> to call **howto**. **Howto** replaces your command with a correct command from LLM.
 
@@ -37,9 +39,29 @@ bindkey -s "\C-g" "\C-ahowto \C-j"
 </tr>
 </table>
 
+### Configuration
+
+Set one of the following API keys (provider is detected automatically):
+
+| Variable | Provider | Default Model | Get API Key |
+|----------|----------|---------------|-------------|
+| `OPENAI_API_KEY` | OpenAI | `gpt-4o` | [platform.openai.com](https://platform.openai.com/api-keys) |
+| `GEMINI_API_KEY` | Gemini | `gemini-2.0-flash` | [aistudio.google.com](https://aistudio.google.com/apikey) |
+| `DEEPSEEK_API_KEY` | DeepSeek | `deepseek-chat` | [platform.deepseek.com](https://platform.deepseek.com/api_keys) |
+
+All providers use OpenAI-compatible API format ([OpenAI](https://platform.openai.com/docs/api-reference/chat), [DeepSeek](https://api-docs.deepseek.com/), [Gemini](https://ai.google.dev/gemini-api/docs/openai)).
+
+If multiple keys are set, priority is: OpenAI → Gemini → DeepSeek.
+
+Optionally override the model:
+
+```bash
+export HOWTO_MODEL="gpt-4o-mini"
+```
+
 ## Usage
 
-Write a command in terminal and press <kbd>ctrl</kbd>+<kbd>g</kbd> to send current command to OpenAI API.
+Write a command in terminal and press <kbd>ctrl</kbd>+<kbd>g</kbd> to send current command to LLM.
 LLM response will be inserted into the current input. You can **modify** the returned command,
 before executing it.
 
